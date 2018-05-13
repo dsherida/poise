@@ -1,7 +1,15 @@
 language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
 env:
   - TEST_DIR=mobile
   - TEST_DIR=web
-script: cd $TEST_DIR && npm install && npm test
+script: 
+  - cd $TEST_DIR
+  - npm install
+  - npm test
 notifications:
     slack: diamond-devs:idRzMleTGDetsZaoASgEalL1
